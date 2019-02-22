@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    text-align: center;
+    padding: 100px 0;
+}
+
+a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 1;
+    font-size: 30px;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #83a9f4, #f441a5, #ffeb3b, #83a9f4);
+    background-size: 300%;
+    border-radius: 40px;
+    position: relative;
+}
+
+a:hover {
+    animation: glowingBtn 5s linear infinite;
+}
+
+a:before {
+    content: ' ';
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #83a9f4, #f441a5, #ffeb3b, #83a9f4);
+    background-size: 300%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+a:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+}
+
+@keyframes glowingBtn {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+
+}
